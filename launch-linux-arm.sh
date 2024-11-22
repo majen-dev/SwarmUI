@@ -31,7 +31,7 @@ fi
 
 # Build the program if it isn't already built
 if [ ! -f src/bin/live_release/SwarmUI.dll ]; then
-    dotnet build src/SwarmUI.csproj --configuration Release -o ./src/bin/live_release -r linux-arm64 --force
+    dotnet build src/SwarmUI.csproj --configuration Release -o ./src/bin/live_release -r linux-arm64 --force /verbosity:diagnostic
     cur_head=`git rev-parse HEAD`
     echo $cur_head > src/bin/last_build
 fi
